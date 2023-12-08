@@ -1,12 +1,11 @@
 import "./index.css";
+import Banner from "./components/Banner";
 
 const App = () => {
   return (
-    <div>
-      <p className="text-3xl font-bold underline">
-        Hello world is this a person
-      </p>
-    </div>
+    <>
+      <Banner />
+    </>
   );
 };
 

@@ -2,7 +2,18 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    colors: {
+      "creamy-900": "#D87D4A",
+      "creamy-300": "#D87D4A",
+      "neutral-000": "#FFFFFF",
+      "neutral-100": "#FAFAFA",
+      "neutral-200": "#F1F1F1",
+      "neutral-800": "#101010",
+      "neutral-900": "#000000",
+    },
+    fontFamily: {
+      manrope: ["Manrope", "sans-serif"],
+    },
   },
   plugins: [],
 };
