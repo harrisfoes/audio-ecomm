@@ -1,10 +1,10 @@
 import "./index.css";
-import Banner from "./components/Banner";
+import Homepage from "./components/component-pages/Homepage";
 
 const App = () => {
   return (
     <>
-      <Banner />
+      <Homepage />
     </>
   );
 };

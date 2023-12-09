@@ -14,6 +14,11 @@ export default {
     fontFamily: {
       manrope: ["Manrope", "sans-serif"],
     },
+    extend: {
+      backgroundImage: {
+        "header-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
+      },
+    },
   },
   plugins: [],
 };
