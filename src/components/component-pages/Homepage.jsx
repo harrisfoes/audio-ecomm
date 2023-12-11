@@ -1,12 +1,18 @@
 import React from "react";
 import Banner from "../Banner";
 import Hero from "../Hero";
+import CategorySection from "../CategorySection";
 
 function Homepage() {
   return (
     <>
       <Banner />
-      <Hero />
+      <main>
+        <Hero />
+        <section>
+          <CategorySection />
+        </section>
+      </main>
     </>
   );
 }

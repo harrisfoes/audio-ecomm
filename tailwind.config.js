@@ -4,7 +4,7 @@ export default {
   theme: {
     colors: {
       "creamy-900": "#D87D4A",
-      "creamy-300": "#D87D4A",
+      "creamy-300": "#FBAF85",
       "neutral-000": "#FFFFFF",
       "neutral-100": "#FAFAFA",
       "neutral-200": "#F1F1F1",
