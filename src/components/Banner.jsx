@@ -6,10 +6,12 @@ import Cart from "../components/Cart";
 function Banner() {
   return (
     <>
-      <div className="bg-neutral-900 font-white py-8 px-4 border-b border-opacity-30 border-b-neutral-000 flex justify-between">
-        <HamburgerMenu />
+      <div className="font-white flex justify-between border-b border-b-neutral-000 border-opacity-30 bg-neutral-900 px-4 py-8 md:px-10">
+        <div className="flex w-[70%] justify-between md:w-[30%]">
+          <HamburgerMenu />
 
-        <Logo />
+          <Logo />
+        </div>
         <Cart />
       </div>
     </>
