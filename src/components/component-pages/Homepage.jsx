@@ -2,6 +2,9 @@ import React from "react";
 import Banner from "../Banner";
 import Hero from "../Hero";
 import CategorySection from "../CategorySection";
+import Featured from "../Featured";
+import AdCopy from "../AdCopy";
+import Footer from "../Footer";
 
 function Homepage() {
   return (
@@ -9,10 +12,11 @@ function Homepage() {
       <Banner />
       <main>
         <Hero />
-        <section>
-          <CategorySection />
-        </section>
+        <CategorySection />
+        <Featured />
+        <AdCopy />
       </main>
+      <Footer />
     </>
   );
 }

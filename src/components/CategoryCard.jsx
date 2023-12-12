@@ -12,9 +12,15 @@ function CategoryCard({ name, image }) {
           <div className="pt-14 text-base font-bold uppercase tracking-wider">
             {name}
           </div>
-          <div className="pt-4 uppercase text-sm font-bold tracking-wider opacity-50 flex gap-2">
-            Shop
-            <img src={arrowRight} alt="right-arrow" />
+          <div className="pt-4 uppercase text-sm font-bold tracking-wider flex gap-2">
+            <span className="opacity-50">Shop</span>
+            <div className="flex flex-col justify-center">
+              <img
+                src={arrowRight}
+                alt="right-arrow"
+                className="stroke-2 h-[16px]"
+              />
+            </div>
           </div>
         </div>
       </div>

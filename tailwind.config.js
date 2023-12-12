@@ -17,6 +17,7 @@ export default {
     extend: {
       backgroundImage: {
         "header-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
+        circles: "url('/src/assets/home/desktop/pattern-circles.svg')",
       },
     },
   },
