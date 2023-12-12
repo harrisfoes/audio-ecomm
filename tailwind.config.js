@@ -18,6 +18,7 @@ export default {
       backgroundImage: {
         "header-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
         "header-tablet": "url('/src/assets/home/tablet/image-header.jpg')",
+        "header-desktop": "url('/src/assets/home/desktop/image-hero.jpg')",
         circles: "url('/src/assets/home/desktop/pattern-circles.svg')",
       },
     },
