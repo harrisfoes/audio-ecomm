@@ -4,7 +4,11 @@ import CartImage from "../assets/shared/desktop/icon-cart.svg";
 function Cart() {
   return (
     <>
-      <img src={CartImage} alt="cart-image" className="flex-shrink-0" />
+      <img
+        src={CartImage}
+        alt="cart-image"
+        className="flex-shrink-0 cursor-pointer"
+      />
     </>
   );
 }

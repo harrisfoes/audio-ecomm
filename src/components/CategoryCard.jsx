@@ -13,7 +13,9 @@ function CategoryCard({ name, image }) {
             {name}
           </div>
           <div className="flex gap-2 pt-4 text-sm font-bold uppercase tracking-wider">
-            <span className="opacity-50">Shop</span>
+            <span className="cursor-pointer opacity-50 hover:text-creamy-900 hover:opacity-100">
+              Shop
+            </span>
             <div className="flex flex-col justify-center">
               <img
                 src={arrowRight}

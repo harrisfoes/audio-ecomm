@@ -12,7 +12,7 @@ import yx1d_earphones from "../assets/home/desktop/image-earphones-yx1.jpg";
 function Featured() {
   return (
     <>
-      <section className="mx-auto mb-2 mt-14 flex w-5/6 flex-col items-center md:max-w-[690px] lg:max-w-[1110px]">
+      <section className="mx-auto mb-2 mt-14 flex w-[95%] flex-col items-center md:max-w-[690px] lg:max-w-[1110px]">
         <div className="md:p-19 rounded-lg bg-creamy-900 bg-circles bg-cover bg-bottom pb-10 pt-14 text-center text-neutral-000 md:mb-4 md:py-20 lg:relative lg:flex lg:bg-center lg:px-20 lg:pb-0">
           <div className="mx-auto max-w-[100px]  md:max-w-[200px] lg:relative lg:top-2 lg:max-w-[50%]">
             <picture>

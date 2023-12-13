@@ -4,9 +4,11 @@ import LogoImage from "../assets/shared/desktop/logo.svg";
 function Logo() {
   return (
     <>
-      <div>
-        <img src={LogoImage} alt="logo image" />
-      </div>
+      <img
+        src={LogoImage}
+        alt="logo image"
+        className="mx-auto cursor-pointer md:mx-0 lg:mx-0"
+      />
     </>
   );
 }

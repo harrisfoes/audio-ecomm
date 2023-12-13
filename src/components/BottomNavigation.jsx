@@ -1,13 +1,20 @@
 import React from "react";
 
 function BottomNavigation() {
+  const links = ["Home", "Headphones", "Speakers", "Earphones"];
   return (
-    <nav className="m-6 text-center text-sm font-bold uppercase tracking-widest text-neutral-000 md:m-4">
+    <nav className="text-center text-sm font-bold uppercase tracking-widest text-neutral-000">
       <ul className="md:flex md:gap-6">
-        <li className="p-2">Home</li>
-        <li className="p-2">Headphones</li>
-        <li className="p-2">Speakers</li>
-        <li className="p-2">Earphones</li>
+        {links.map((items) => {
+          return (
+            <li
+              key={items}
+              className="cursor-pointer p-2 hover:text-creamy-900"
+            >
+              {items}
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
