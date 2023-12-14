@@ -9,14 +9,14 @@ import Footer from "../Footer";
 function Homepage() {
   return (
     <>
-      <Banner />
       <main>
+        <Banner />
         <Hero />
         <CategorySection />
         <Featured />
         <AdCopy />
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }
