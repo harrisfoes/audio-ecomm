@@ -10,12 +10,10 @@ function Homepage() {
   return (
     <>
       <main>
-        <Banner />
         <Hero />
         <CategorySection />
         <Featured />
         <AdCopy />
-        <Footer />
       </main>
     </>
   );
