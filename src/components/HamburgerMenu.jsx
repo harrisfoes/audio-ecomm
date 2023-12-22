@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HamburgerMenuIcon from "../assets/shared/tablet/icon-hamburger.svg";
-import CategorySection from "./CategorySection";
+import CategorySection from "./HomeCategory";
 function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
