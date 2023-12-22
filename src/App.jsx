@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Homepage from "./components/component-pages/Homepage";
-import Headphones from "./components/component-pages/Headphones";
-import Speakers from "./components/component-pages/Speakers";
+import Headphones from "./components/component-pages/CategoryPage";
 
 const App = () => {
   return (
@@ -12,8 +11,7 @@ const App = () => {
       <Banner />
       <Routes>
         <Route path="/audio-ecomm" element={<Homepage />} />
-        <Route path="/headphones" element={<Headphones />} />
-        <Route path="/speakers" element={<Speakers />} />
+        <Route path="/category/:id" element={<Headphones />} />
       </Routes>
       <Footer />
     </>
