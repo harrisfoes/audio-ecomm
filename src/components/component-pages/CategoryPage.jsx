@@ -40,13 +40,13 @@ function CategoryPage() {
               <CategoryCard
                 key={items.name}
                 mobileImage={
-                  "/audio-ecomm/src" + items.categoryImage.mobile.slice(1)
+                  "/audio-ecomm/" + items.categoryImage.mobile.slice(1)
                 }
                 tabletImage={
-                  "/audio-ecomm/src" + items.categoryImage.tablet.slice(1)
+                  "/audio-ecomm/" + items.categoryImage.tablet.slice(1)
                 }
                 desktopImage={
-                  "/audio-ecomm/src" + items.categoryImage.desktop.slice(1)
+                  "/audio-ecomm/" + items.categoryImage.desktop.slice(1)
                 }
                 name={items.name}
                 description={items.description}
