@@ -9,7 +9,7 @@ function Banner() {
     <>
       <div className="font-white z-50 border-b border-b-neutral-000 border-opacity-30 bg-neutral-900 px-4 py-8 md:px-10">
         <div className="mx-auto flex max-w-[1110px] items-end justify-between ">
-          <div className="flex w-[100%] items-center justify-between  md:w-[30%] lg:min-w-[75%] xl:w-[65%]">
+          <div className="flex w-[70%] items-center justify-between md:w-[30%] lg:min-w-[75%] xl:w-[65%]">
             <div className="lg:hidden">
               <HamburgerMenu />
             </div>
