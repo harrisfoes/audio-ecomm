@@ -17,7 +17,7 @@ function Featured() {
           <div className="mx-auto max-w-[100px]  md:max-w-[200px] lg:relative lg:top-2 lg:max-w-[50%]">
             <picture>
               <source
-                media="(min-width:768px) and (min-width:1279px)"
+                media="(min-width:768px) and (max-width:1279px)"
                 srcSet={zx9d_speakerImage}
               />
               <img
@@ -39,17 +39,17 @@ function Featured() {
           </div>
         </div>
 
-        <div className="relative my-2 rounded-lg bg-neutral-200">
+        <div className="relative my-2 w-full rounded-lg bg-neutral-200">
           <picture>
             <source
-              media="(min-width: 768px) and (max-width:1279px)"
+              media="(min-width: 768px) and (max-width:1023px)"
               srcSet={zx7t_speakerImage}
             />
-            <source media="(min-width: 1280px)" srcSet={zx7d_speakerImage} />
+            <source media="(min-width: 1024px)" srcSet={zx7d_speakerImage} />
             <img
               src={zx7_speakerImage}
               alt="zx7 speaker"
-              className="rounded-lg"
+              className="mx-auto rounded-lg"
             />
           </picture>
           <div className="absolute top-[30%] px-6 md:left-[6%]">

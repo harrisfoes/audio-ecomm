@@ -1,32 +1,57 @@
 import React from "react";
-import arrowRight from "../assets/shared/desktop/icon-arrow-right.svg";
+import Button from "./Button";
 
-function CategoryCard({ name, image }) {
+function CategoryCard({
+  mobileImage,
+  tabletImage,
+  desktopImage,
+  name,
+  description,
+  isNew,
+  isReverse,
+}) {
   return (
-    <>
-      <div className="relative my-2 flex min-w-[360px] flex-col items-center pt-20 md:min-w-[225px] lg:min-w-[350px]">
-        <div className="absolute top-[14%] max-w-[150px]">
-          <img src={image} alt="earphone-category" />
-        </div>
-        <div className="flex w-5/6 flex-col items-center rounded-lg bg-neutral-200 py-4 lg:pb-8">
-          <div className="pt-14 text-base font-bold uppercase tracking-wider lg:text-lg">
-            {name}
-          </div>
-          <div className="flex gap-2 pt-4 text-sm font-bold uppercase tracking-wider">
-            <span className="cursor-pointer opacity-50 hover:text-creamy-900 hover:opacity-100">
-              Shop
-            </span>
-            <div className="flex flex-col justify-center">
-              <img
-                src={arrowRight}
-                alt="right-arrow"
-                className="h-[16px] stroke-2"
-              />
+    <div className="mx-auto my-14 flex w-[90%] flex-col items-center justify-center text-center font-manrope xl:w-full xl:text-left">
+      {/* TODO: desktop alternate flex-order */}
+      <div
+        className={`xl:flex-between xl:flex xl:gap-16 ${
+          isReverse ? "xl: xl:flex-row" : "xl:flex-row-reverse"
+        }`}
+      >
+        <picture className="xl:w-1/2">
+          <source
+            media="(min-width:768px) and (max-width:1279px)"
+            srcSet={tabletImage}
+          />
+          <source media="(min-width: 1280px)" srcSet={desktopImage} />
+          <img
+            src={mobileImage}
+            alt={name + " image"}
+            className="mx-auto rounded-lg"
+          />
+        </picture>
+        <div
+          className={` xl:flex xl:w-1/2 xl:flex-col xl:justify-center ${
+            isReverse ? "xl:items-end" : "xl:items-start"
+          }`}
+        >
+          <div className=" xl:w-[90%]">
+            {isNew && (
+              <h2 className="py-4 uppercase tracking-[0.5rem] text-creamy-900">
+                New Product
+              </h2>
+            )}
+            <h1 className="py-4 text-3xl font-bold uppercase">{name}</h1>
+            <p className="mx-auto py-4 leading-relaxed opacity-50 md:w-[80%] xl:w-full">
+              {description}
+            </p>
+            <div className="py-2 text-neutral-000">
+              <Button text="See product" color="creamy-900" />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

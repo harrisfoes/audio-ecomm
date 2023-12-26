@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "../Banner";
 import Hero from "../Hero";
-import CategorySection from "../CategorySection";
+import HomeCategory from "../HomeCategory";
 import Featured from "../Featured";
 import AdCopy from "../AdCopy";
 import Footer from "../Footer";
@@ -10,12 +10,10 @@ function Homepage() {
   return (
     <>
       <main>
-        <Banner />
         <Hero />
-        <CategorySection />
+        <HomeCategory />
         <Featured />
         <AdCopy />
-        <Footer />
       </main>
     </>
   );
