@@ -14,7 +14,7 @@ function NavLinks() {
         {links.map((items) => {
           return (
             <li
-              key={items}
+              key={items.name}
               className="cursor-pointer p-2 hover:text-creamy-900"
             >
               <Link to={items.to}>{items.name}</Link>

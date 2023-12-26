@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import CategoryCard from "../CategoryCard";
 import HomeCategory from "../HomeCategory";
 import AdCopy from "../AdCopy";
+
 function CategoryPage() {
   //id is the category selected
   const { id } = useParams();
@@ -22,9 +23,9 @@ function CategoryPage() {
     }
   });
 
-  console.log(sorted);
-
+  //console.log(sorted);
   //console.log(payload);
+
   return (
     <>
       <section>
@@ -34,7 +35,7 @@ function CategoryPage() {
 
         <div className="mx-auto flex max-w-[1100px] flex-col items-center justify-center">
           {sorted.map((items, index) => {
-            console.log(index % 2 == 0);
+            //console.log(index % 2 == 0);
             return (
               <CategoryCard
                 key={items.name}
