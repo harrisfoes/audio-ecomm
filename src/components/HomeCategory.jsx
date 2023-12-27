@@ -1,7 +1,7 @@
 import React from "react";
-import earphoneCatImage from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import headphoneCatImage from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speakerCatImage from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
+import earphoneCatImage from "../../public/assets/shared/desktop/image-category-thumbnail-earphones.png";
+import headphoneCatImage from "../../public/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import speakerCatImage from "../../public/assets/shared/desktop/image-category-thumbnail-speakers.png";
 import HomeCategoryCard from "./HomeCategoryCard";
 
 function HomeCategory({ toggleMenu }) {

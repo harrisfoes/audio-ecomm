@@ -1,5 +1,5 @@
 import React from "react";
-import CartImage from "../assets/shared/desktop/icon-cart.svg";
+import CartImage from "../../public/assets/shared/desktop/icon-cart.svg";
 
 function Cart() {
   return (

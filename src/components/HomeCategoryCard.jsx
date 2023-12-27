@@ -1,5 +1,5 @@
 import React from "react";
-import arrowRight from "../assets/shared/desktop/icon-arrow-right.svg";
+import arrowRight from "../../public/assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
 
 function HomeCategoryCard({ name, image, link, toggleMenu }) {

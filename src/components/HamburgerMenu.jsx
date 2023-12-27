@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HamburgerMenuIcon from "../assets/shared/tablet/icon-hamburger.svg";
+import HamburgerMenuIcon from "../../public/assets/shared/tablet/icon-hamburger.svg";
 import HomeCategory from "./HomeCategory";
 function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);

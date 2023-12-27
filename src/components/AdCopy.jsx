@@ -1,7 +1,7 @@
 import React from "react";
-import personImage from "../assets/shared/mobile/image-best-gear.jpg";
-import personImage_t from "../assets/shared/tablet/image-best-gear.jpg";
-import personImage_d from "../assets/shared/desktop/image-best-gear.jpg";
+import personImage from "../../public/assets/shared/mobile/image-best-gear.jpg";
+import personImage_t from "../../public/assets/shared/tablet/image-best-gear.jpg";
+import personImage_d from "../../public/assets/shared/desktop/image-best-gear.jpg";
 
 function AdCopy() {
   return (
