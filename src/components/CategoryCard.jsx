@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function CategoryCard({
   mobileImage,
@@ -9,6 +10,7 @@ function CategoryCard({
   description,
   isNew,
   isReverse,
+  link,
 }) {
   return (
     <div className="mx-auto my-14 flex w-[90%] flex-col items-center justify-center text-center font-manrope xl:w-full xl:text-left">
@@ -45,7 +47,9 @@ function CategoryCard({
               {description}
             </p>
             <div className="py-2 text-neutral-000">
-              <Button text="See product" color="creamy-900" />
+              <Link to={"/product/" + link}>
+                <Button text="See product" color="creamy-900" />
+              </Link>
             </div>
           </div>
         </div>

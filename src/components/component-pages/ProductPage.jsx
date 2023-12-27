@@ -31,7 +31,7 @@ function ProductPage() {
                     New Product
                   </h2>
                 )}
-                <h1 className="w-1/2 text-3xl font-bold uppercase">
+                <h1 className="w-3/5 text-3xl font-bold uppercase">
                   {productDetails[0].name}
                 </h1>
                 <p className="pt-4 opacity-50">
