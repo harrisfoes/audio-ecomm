@@ -1,9 +1,9 @@
 import React from "react";
 import Logo from "./Logo";
 import BottomNavigation from "./BottomNavigation";
-import fb_ico from "../../public/assets/shared/desktop/icon-facebook.svg";
-import insta_ico from "../../public/assets/shared/desktop/icon-instagram.svg";
-import tw_ico from "../../public/assets/shared/desktop/icon-twitter.svg";
+import fb_ico from "../assets/shared/desktop/icon-facebook.svg";
+import insta_ico from "../assets/shared/desktop/icon-instagram.svg";
+import tw_ico from "../assets/shared/desktop/icon-twitter.svg";
 
 function Footer() {
   return (

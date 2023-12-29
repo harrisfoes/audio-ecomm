@@ -1,11 +1,11 @@
 import React from "react";
-import personImage from "../../public/assets/shared/mobile/image-best-gear.jpg";
-import personImage_t from "../../public/assets/shared/tablet/image-best-gear.jpg";
-import personImage_d from "../../public/assets/shared/desktop/image-best-gear.jpg";
+import personImage from "../assets/shared/mobile/image-best-gear.jpg";
+import personImage_t from "../assets/shared/tablet/image-best-gear.jpg";
+import personImage_d from "../assets/shared/desktop/image-best-gear.jpg";
 
 function AdCopy() {
   return (
-    <section className="mx-auto my-16 w-[90%] text-center md:max-w-[690px] lg:my-36 lg:max-w-[1110px] xl:flex xl:flex-row-reverse xl:justify-between">
+    <section className="mx-auto my-16 w-[90%] text-center md:max-w-[90%] lg:my-36 lg:max-w-[1110px] xl:flex xl:flex-row-reverse xl:justify-between">
       <div className="xl:w-1/2">
         <picture>
           <source media="(min-width:1280px)" srcSet={personImage_d} />
