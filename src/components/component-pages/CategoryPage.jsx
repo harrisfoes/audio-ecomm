@@ -52,6 +52,7 @@ function CategoryPage() {
                 description={items.description}
                 isNew={items.new}
                 isReverse={index % 2 == 0}
+                link={items.slug}
               />
             );
           })}

@@ -6,7 +6,7 @@ import HomeCategoryCard from "./HomeCategoryCard";
 
 function HomeCategory({ toggleMenu }) {
   return (
-    <section className="lg:my-26 mx-auto mb-4 mt-4 md:my-8 md:max-w-[800px] lg:my-24 lg:max-w-[1110px]">
+    <section className="lg:my-26 mx-auto mb-4 mt-4 md:my-8 md:w-[90%] lg:my-24 lg:max-w-[1110px]">
       <div className="mx-auto flex flex-col  md:mx-0 md:flex-row md:justify-between">
         <HomeCategoryCard
           name="Headphones"

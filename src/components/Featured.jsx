@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import zx9_speakerImage from "../assets/home/mobile/image-speaker-zx9.png";
 import zx9d_speakerImage from "../assets/home/desktop/image-speaker-zx9.png";
@@ -35,7 +36,9 @@ function Featured() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </div>
-            <Button text="See Product" color="black" />
+            <Link to="/product/zx9-speaker">
+              <Button text="See Product" color="black" />
+            </Link>
           </div>
         </div>
 
