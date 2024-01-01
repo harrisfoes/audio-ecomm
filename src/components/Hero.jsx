@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -15,7 +16,9 @@ function Hero() {
             made for the passionate music enthusiast
           </p>
           <div className="py-2 md:p-6 lg:p-0">
-            <Button text="See Product" color="creamy-900" />
+            <Link to="/product/xx99-mark-two-headphones">
+              <Button text="See Product" color="creamy-900" />
+            </Link>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function ProductOther({ productDetails }) {
   return (
@@ -33,7 +34,9 @@ function ProductOther({ productDetails }) {
                   {items.name}
                 </h1>
                 <div className="my-6 text-neutral-000">
-                  <Button text="See Product" color="creamy-900" />
+                  <Link to={"/product/" + items.slug}>
+                    <Button text="See Product" color="creamy-900" />
+                  </Link>
                 </div>
               </div>
             );

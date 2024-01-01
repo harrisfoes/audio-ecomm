@@ -57,7 +57,9 @@ function Featured() {
           </picture>
           <div className="absolute top-[30%] px-6 md:left-[6%]">
             <h2 className="pb-6 text-3xl font-bold uppercase">ZX7 Speaker</h2>
-            <Button text="See Product" color="transparent" />
+            <Link to="/product/zx7-speaker">
+              <Button text="See Product" color="transparent" />
+            </Link>
           </div>
         </div>
 
@@ -80,7 +82,9 @@ function Featured() {
           <div className="my-2 w-full rounded-lg bg-neutral-200 px-6 py-10 md:flex md:flex-col md:justify-center md:px-8 lg:w-[50%]">
             <h2 className="pb-6 text-3xl font-bold uppercase">YX1 Earphones</h2>
             <div>
-              <Button text="See Product" color="transparent" />
+              <Link to="/product/yx1-earphones">
+                <Button text="See Product" color="transparent" />
+              </Link>
             </div>
           </div>
         </div>
