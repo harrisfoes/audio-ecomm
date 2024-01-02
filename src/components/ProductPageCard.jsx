@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
 function ProductPageCard({ productDetails }) {
+  const [amount, setAmount] = useState(1);
   const baseUrl = "/audio-ecomm/";
   const imgUrl = (device) => {
     return `${baseUrl}${productDetails.image[device].slice(1)}`;
+  };
+
+  const addAmount = () => {
+    setAmount((amount) => amount + 1);
+  };
+  const subtractAmount = () => {
+    if (amount >= 1) {
+      setAmount((amount) => amount - 1);
+    }
   };
 
   return (
@@ -45,11 +55,20 @@ function ProductPageCard({ productDetails }) {
                 })}
               </h2>
               <div className="add-to-cart flex ">
-                <div className="flex gap-4 p-2">
+                <div className="flex gap-6 p-2">
                   <div className="ticker flex bg-neutral-200">
-                    <button className="px-4 opacity-50">-</button>
-                    <div className="flex items-center px-4 font-bold">1</div>
-                    <button className="px-4 opacity-50">+</button>
+                    <button
+                      className="px-4 opacity-50"
+                      onClick={subtractAmount}
+                    >
+                      -
+                    </button>
+                    <div className="flex w-10 items-center px-4 font-bold">
+                      {amount}
+                    </div>
+                    <button className="px-4 opacity-50" onClick={addAmount}>
+                      +
+                    </button>
                   </div>
                   <div className="text-neutral-000">
                     <Button text="Add to cart" color="creamy-900" />
