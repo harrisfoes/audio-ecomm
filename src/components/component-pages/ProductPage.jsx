@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import data from "../../data.json";
-import Button from "../Button";
 import GoBack from "../GoBack";
 import HomeCategory from "../HomeCategory";
 import AdCopy from "../AdCopy";
@@ -15,11 +14,6 @@ function ProductPage() {
   const productDetails = data.filter((items) => {
     return items.slug === productId;
   })[0];
-
-  const baseUrl = "/audio-ecomm/";
-  const imgUrl = (device) => {
-    return `${baseUrl}${productDetails.image[device].slice(1)}`;
-  };
 
   return (
     <>

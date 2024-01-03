@@ -62,6 +62,17 @@ Users should be able to:
         Add to cart UI working
         Add to cart functionality and pricing math working
 
+        *Breaking down this phase because it's the most challenging relative to my skill level and knowledge*
+
+        UI
+        1 - Create add to cart UI
+        2 - Create checkout UI
+        3 - Create thank you page UI
+        Data Integration
+        1 - Make functioning cart page
+        2 - Implement validation for all checkout
+        3 - Implement final thank you page with accurate product display
+
     Next phases will be turning this into a fullstack app, but that will be for further in the future
 
 ### Built with

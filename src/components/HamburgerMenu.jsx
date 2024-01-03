@@ -7,7 +7,6 @@ function HamburgerMenu() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    //50/50
     document.body.style.overflow = isOpen ? "auto" : "hidden";
   };
 
