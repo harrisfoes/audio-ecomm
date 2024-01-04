@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Homepage from "./components/component-pages/Homepage";
 import CategoryPage from "./components/component-pages/CategoryPage";
 import ProductPage from "./components/component-pages/ProductPage";
+import Checkout from "./components/component-pages/Checkout";
+
 const App = () => {
   return (
     <>
@@ -13,6 +15,7 @@ const App = () => {
         <Route path="/audio-ecomm" element={<Homepage />} />
         <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/product/:productId" element={<ProductPage />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </>
