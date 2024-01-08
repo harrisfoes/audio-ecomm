@@ -9,7 +9,10 @@ function GoBack() {
   };
   return (
     <>
-      <div onClick={goBack} className="opacity-50 hover:text-creamy-900">
+      <div
+        onClick={goBack}
+        className="cursor-pointer opacity-50 hover:text-creamy-900"
+      >
         Go Back
       </div>
     </>

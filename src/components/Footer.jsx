@@ -28,7 +28,7 @@ function Footer() {
         </p>
         <div className="flex w-full flex-col items-center px-6 pb-6 md:flex-row md:items-end md:justify-between lg:mt-16 lg:px-0">
           <p className="pt-10 text-center font-bold opacity-50 md:text-left">
-            Harris Escalante. <br /> Copyright 2023. All Rights Reserved
+            Harris Escalante <br /> Copyright 2023. All Rights Reserved
           </p>
           <div className="flex gap-6 pt-6">
             <img
