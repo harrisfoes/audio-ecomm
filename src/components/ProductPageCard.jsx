@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "./Button";
+import { ProductContext } from "./contexts/ProductContext";
 
 function ProductPageCard({ productDetails }) {
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(0);
   const baseUrl = "/audio-ecomm/";
+  const { updateProducts } = useContext(ProductContext);
   const imgUrl = (device) => {
     return `${baseUrl}${productDetails.image[device].slice(1)}`;
   };
@@ -15,6 +17,10 @@ function ProductPageCard({ productDetails }) {
     if (amount >= 1) {
       setAmount((amount) => amount - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    updateProducts({ id: productDetails.id, amount: amount });
   };
 
   return (
@@ -71,7 +77,12 @@ function ProductPageCard({ productDetails }) {
                     </button>
                   </div>
                   <div className="text-neutral-000">
-                    <Button text="Add to cart" color="creamy-900" />
+                    <button
+                      className="mx-auto h-[48px] w-[160px] bg-creamy-900 text-[13px] font-bold uppercase tracking-wider hover:bg-creamy-300"
+                      onClick={handleAddToCart}
+                    >
+                      Add to cart
+                    </button>
                   </div>
                 </div>
               </div>
