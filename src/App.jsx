@@ -1,5 +1,5 @@
 import "./index.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
@@ -10,13 +10,13 @@ import Checkout from "./components/component-pages/Checkout";
 import { ProductContext } from "./components/contexts/ProductContext";
 
 const App = () => {
-  const [products, setProducts] = useContext(ProductContext);
+  const [products, setProducts] = useState([]);
 
-  const updateProducts = (newProduct) => {
-    //setProducts(newProduct)
-    console.log(newProduct);
+  const updateProducts = (newValue) => {
+    console.log("newvalue");
+    console.log(newValue);
+    setProducts(newValue);
   };
-
   return (
     <>
       <ProductContext.Provider value={{ products, updateProducts }}>

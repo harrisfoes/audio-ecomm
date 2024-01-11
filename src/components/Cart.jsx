@@ -15,10 +15,10 @@ function Cart({ toggleMenu, cartIsOpen }) {
   };
   */
 
-  const productsInCart = useContext(ProductContext);
+  const { products, updateProducts } = useContext(ProductContext);
   //console.log(data[0].image.mobile.slice(1));
   console.log(data);
-  console.log(productsInCart);
+  console.log(products);
 
   document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
 
@@ -50,11 +50,13 @@ function Cart({ toggleMenu, cartIsOpen }) {
                 </button>
               </div>
 
-              <div className="py-8 text-center font-medium opacity-50">
-                The cart is empty
-              </div>
-
-              {/*products*/}
+              {products === undefined ? (
+                <div className="py-8 text-center font-medium opacity-50">
+                  The cart is empty
+                </div>
+              ) : (
+                products.map((items) => items.id + " " + items.amount)
+              )}
 
               <ProductInCart data={data[0]} />
 
