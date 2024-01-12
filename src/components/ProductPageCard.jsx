@@ -47,6 +47,7 @@ function ProductPageCard({ productDetails }) {
             if (item.id === thisProductID) {
               return { ...item, amount };
             }
+            return item;
           }),
         );
       } else {

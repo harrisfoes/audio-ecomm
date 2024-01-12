@@ -50,43 +50,22 @@ function Cart({ toggleMenu, cartIsOpen }) {
                 </button>
               </div>
 
-              {products === undefined ? (
+              {products.length === 0 ? (
                 <div className="py-8 text-center font-medium opacity-50">
                   The cart is empty
                 </div>
               ) : (
-                products.map((items) => items.id + " " + items.amount)
-              )}
-
-              <ProductInCart data={data[0]} />
-
-              <div className="product-line flex items-center justify-between py-2">
-                <div className="flex items-center gap-2">
-                  <div className="max-w-[64px]">
-                    <img
-                      src={"/audio-ecomm/" + data[0].image.mobile.slice(1)}
+                //products.map((items) => items.id + " " + items.amount)
+                //<ProductInCart productData={products[0]} />
+                products.map((items) => {
+                  return (
+                    <ProductInCart
+                      key={items.id + items.amount}
+                      productData={items}
                     />
-                  </div>
-                  <div className="flex flex-col px-2">
-                    <div className="font-bold">{data[0].shortName}</div>
-                    <div className="text-sm font-bold opacity-50">
-                      {data[0].price.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD",
-                        minimumFractionDigits: 0,
-                      })}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="ticker flex h-10 items-center justify-center bg-neutral-200">
-                  <button className="px-2 opacity-50">-</button>
-                  <div className="flex w-8 justify-center  px-1 font-bold">
-                    1
-                  </div>
-                  <button className="px-2 opacity-50">+</button>
-                </div>
-              </div>
+                  );
+                })
+              )}
 
               <div className="total-price flex justify-between py-4">
                 <div className="font-semibold uppercase opacity-50">Total</div>
