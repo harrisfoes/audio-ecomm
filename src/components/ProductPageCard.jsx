@@ -3,9 +3,10 @@ import Button from "./Button";
 import { ProductContext } from "./contexts/ProductContext";
 
 function ProductPageCard({ productDetails }) {
-  const [amount, setAmount] = useState(0);
-  const baseUrl = "/audio-ecomm/";
+  const [amount, setAmount] = useState(1);
   const { products, updateProducts } = useContext(ProductContext);
+  const baseUrl = "/audio-ecomm/";
+
   const imgUrl = (device) => {
     return `${baseUrl}${productDetails.image[device].slice(1)}`;
   };
@@ -30,31 +31,29 @@ function ProductPageCard({ productDetails }) {
     */
     console.log("handle");
 
-    if (products.length === 0) {
-      console.log("first add");
-      updateProducts([{ id: thisProductID, amount: amount }]);
-    } else {
-      const idExists = products.filter((item) => item.id === thisProductID);
-      console.log(products);
+    const idExists = products.filter((item) => item.id === thisProductID);
+    console.log(products);
+    console.log(idExists);
+
+    if (idExists.length > 0) {
+      console.log("id exists");
       console.log(idExists);
 
-      if (idExists.length > 0) {
-        console.log("id exists");
-        console.log(idExists);
-
-        updateProducts(
-          products.map((item) => {
-            if (item.id === thisProductID) {
-              return { ...item, amount };
-            }
-            return item;
-          }),
-        );
-      } else {
-        console.log("new product");
-        updateProducts([...products, { id: thisProductID, amount: amount }]);
-      }
+      updateProducts(
+        products.map((item) => {
+          if (item.id === thisProductID) {
+            return { ...item, amount };
+          }
+          return item;
+        }),
+      );
+    } else {
+      console.log("new product");
+      updateProducts([...products, { id: thisProductID, amount: amount }]);
     }
+
+    //reset amout to default after adding item to cart
+    setAmount(1);
   };
 
   return (
