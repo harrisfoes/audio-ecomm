@@ -26,13 +26,26 @@ function Cart({ toggleMenu, cartIsOpen }) {
     updateProducts([]);
   };
 
+  const handleAmountChange = (productObj) => {
+    console.log("amt change");
+    console.log(productObj);
+    //update
+    updateProducts(
+      products.map((item) => {
+        const amount = productObj.amount;
+        if (item.id === productObj.id) {
+          return { ...item, amount };
+        }
+        return item;
+      }),
+    );
+  };
+
   const totalPrice = products.reduce((accum, items) => {
     const thisItem = data.filter((dataItem) => dataItem.id === items.id)[0]
       .price;
     return accum + items.amount * thisItem;
   }, 0);
-
-  console.log(totalPrice);
 
   return (
     <>
@@ -84,6 +97,7 @@ function Cart({ toggleMenu, cartIsOpen }) {
                     <ProductInCart
                       key={items.id + items.amount}
                       productData={items}
+                      updateProductAmount={handleAmountChange}
                     />
                   );
                 })
