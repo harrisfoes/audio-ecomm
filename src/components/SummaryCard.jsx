@@ -33,7 +33,7 @@ const ProductLine = ({ productData }) => {
   );
 };
 
-function SummaryCard() {
+function SummaryCard({ handleConfirmPay, retrieveTotalPrice }) {
   const { products } = useContext(ProductContext);
   const shippingPrice = 50;
 
@@ -49,7 +49,20 @@ function SummaryCard() {
     return accum + items.amount * thisItem;
   }, 0);
 
-  const grandTotal = totalPrice + shippingPrice + vatPrice;
+  const grandTotal = totalPrice + shippingPrice;
+
+  const formatPrice = (price) => {
+    return price.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+    });
+  };
+
+  const handleSubmit = () => {
+    retrieveTotalPrice(grandTotal);
+    handleConfirmPay();
+  };
 
   return (
     <>
@@ -63,25 +76,30 @@ function SummaryCard() {
         <div className="price-summary my-10 bg-neutral-000">
           <div className="my-4 flex justify-between">
             <div className="font-medium uppercase opacity-50">Total</div>
-            <div className="font-bold">$ {totalPrice}</div>
+            <div className="font-bold">{formatPrice(totalPrice)}</div>
           </div>
           <div className="my-4 flex justify-between">
             <div className="font-medium uppercase opacity-50">Shipping</div>
-            <div className="font-bold">$ {shippingPrice}</div>
+            <div className="font-bold">{formatPrice(shippingPrice)}</div>
           </div>
           <div className="my-4 flex justify-between">
             <div className="font-medium uppercase opacity-50">
               VAT (Included)
             </div>
-            <div className="font-bold">$ {vatPrice}</div>
+            <div className="font-bold">{formatPrice(vatPrice)}</div>
           </div>
 
           <div className="my-4 flex items-center justify-between ">
             <div className="font-medium uppercase opacity-50">Grand Total</div>
-            <div className="my-6 font-bold text-creamy-900">$ {grandTotal}</div>
+            <div className="my-6 font-bold text-creamy-900">
+              {formatPrice(grandTotal)}
+            </div>
           </div>
 
-          <button className="w-full bg-creamy-900 p-4 font-bold uppercase text-neutral-000 hover:bg-creamy-300">
+          <button
+            onClick={handleSubmit}
+            className="w-full bg-creamy-900 p-4 font-bold uppercase text-neutral-000 hover:bg-creamy-300"
+          >
             Continue & Pay
           </button>
         </div>
