@@ -29,7 +29,7 @@ function PaymentDetails() {
               e-Money
             </label>
           </div>
-          <div className="mb-6 flex items-center gap-2 rounded-lg border border-[#9C9C9C] px-3 py-4 hover:border-creamy-900 hover:shadow-md">
+          <div className="mb-6 flex items-center gap-2 rounded-lg border border-[#9C9C9C] px-3 py-4 hover:border-creamy-900 hover:shadow-md ">
             <label
               htmlFor="payment-2"
               className="block h-full w-full font-bold"

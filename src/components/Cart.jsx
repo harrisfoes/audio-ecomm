@@ -82,40 +82,41 @@ function Cart({ toggleMenu, cartIsOpen }) {
               ) : (
                 //products.map((items) => items.id + " " + items.amount)
                 //<ProductInCart productData={products[0]} />
-                products.map((items) => {
-                  return (
-                    <>
-                      <div className="top-line flex items-end justify-between py-2">
-                        <h1 className="text-lg font-bold uppercase tracking-wider">
-                          Cart ({products.length})
-                        </h1>
-                        <button
-                          onClick={handleRemoveAll}
-                          className="underline opacity-50 hover:text-creamy-900"
-                        >
-                          Remove all
-                        </button>
-                      </div>
+
+                <>
+                  <div className="top-line flex items-end justify-between py-2">
+                    <h1 className="text-lg font-bold uppercase tracking-wider">
+                      Cart ({products.length})
+                    </h1>
+                    <button
+                      onClick={handleRemoveAll}
+                      className="underline opacity-50 hover:text-creamy-900"
+                    >
+                      Remove all
+                    </button>
+                  </div>
+                  {products.map((items) => {
+                    return (
                       <ProductInCart
                         key={items.id + " " + items.amount}
                         productData={items}
                         updateProductAmount={handleAmountChange}
                       />
-                      <div className="total-price flex justify-between py-4">
-                        <div className="font-semibold uppercase opacity-50">
-                          Total
-                        </div>
-                        <div className="font-xl font-bold">$ {totalPrice}</div>
-                      </div>
+                    );
+                  })}
+                  <div className="total-price flex justify-between py-4">
+                    <div className="font-semibold uppercase opacity-50">
+                      Total
+                    </div>
+                    <div className="font-xl font-bold">$ {totalPrice}</div>
+                  </div>
 
-                      <Link to="/checkout/" onClick={toggleMenu}>
-                        <button className="hover:creamy-300 w-full bg-creamy-900 p-4 text-sm font-bold uppercase text-neutral-000">
-                          Checkout
-                        </button>
-                      </Link>
-                    </>
-                  );
-                })
+                  <Link to="/checkout/" onClick={toggleMenu}>
+                    <button className="hover:creamy-300 w-full bg-creamy-900 p-4 text-sm font-bold uppercase text-neutral-000">
+                      Checkout
+                    </button>
+                  </Link>
+                </>
               )}
             </div>
           </div>
