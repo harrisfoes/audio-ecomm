@@ -1,6 +1,6 @@
 import "./index.css";
-import { useContext, useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Homepage from "./components/component-pages/Homepage";
@@ -13,8 +13,8 @@ const App = () => {
   const [products, setProducts] = useState([]);
 
   const updateProducts = (newValue) => {
-    console.log("newvalue");
-    console.log(newValue);
+    //console.log("newvalue");
+    //console.log(newValue);
     setProducts(newValue);
   };
   return (

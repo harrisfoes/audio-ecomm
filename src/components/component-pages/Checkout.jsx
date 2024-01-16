@@ -32,7 +32,7 @@ function Checkout() {
             <ScrollToTop />
             <div className="absolute z-20 h-full w-full bg-neutral-800 opacity-50"></div>
 
-            <div className="absolute inset-0 top-20 z-40 flex h-fit w-full items-center justify-center p-2">
+            <div className="absolute inset-0 top-0 z-40 flex h-fit w-full items-center justify-center p-2">
               <OrderThanks
                 products={products}
                 grandTotal={grandTotalPrice}
