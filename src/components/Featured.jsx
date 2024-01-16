@@ -14,8 +14,8 @@ function Featured() {
   return (
     <>
       <section className="mx-auto mb-2 mt-14 flex w-[95%] flex-col items-center md:max-w-[690px] lg:max-w-[1110px]">
-        <div className="md:p-19 rounded-lg bg-creamy-900 bg-circles bg-cover bg-bottom pb-10 pt-14 text-center text-neutral-000 md:mb-4 md:py-20 lg:relative lg:flex lg:bg-center lg:px-20 lg:pb-0">
-          <div className="mx-auto max-w-[100px]  md:max-w-[200px] lg:relative lg:top-2 lg:max-w-[50%]">
+        <div className="md:p-19 rounded-lg bg-creamy-900 bg-circles bg-cover bg-bottom pb-10 pt-14 text-center text-neutral-000 md:mb-4 md:py-20 lg:relative lg:mb-0 lg:flex lg:bg-center lg:px-20 lg:pb-0">
+          <div className="mx-auto max-w-[100px]  md:max-w-[200px] lg:relative lg:top-4 lg:max-w-[50%]">
             <picture>
               <source
                 media="(min-width:768px) and (max-width:1279px)"
@@ -41,7 +41,7 @@ function Featured() {
             </Link>
           </div>
         </div>
-
+        <div className="hidden-bar z-50 h-2 w-full bg-neutral-000 lg:h-5"></div>
         <div className="relative my-2 w-full rounded-lg bg-neutral-200">
           <picture>
             <source
