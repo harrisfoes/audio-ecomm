@@ -9,7 +9,12 @@ function BillingDetails() {
 
       <div className="md:flex md:flex-wrap md:justify-between md:gap-4">
         <div className="mb-6 md:mb-0 md:w-[48%]">
-          <label className="text-xs font-bold">Name</label>
+          <div className="flex justify-between text-xs font-bold">
+            <label className="text-xs">Name</label>
+            <error className="hidden text-[red] opacity-50">
+              Please input your name
+            </error>
+          </div>
           <input
             type="text"
             className="w-full rounded-lg border px-4 py-4 font-bold text-[#9C9C9C] focus:outline-none"
