@@ -16,9 +16,21 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+This is my first BIG project in React. A multi-page e-commerce website application that I implemented using React.js and Tailwind CSS. My biggest challenge yet since I started my front-end learning journey.
+
+This project has:
+
+- A hero page that features the website's project
+- The ability to browse from three categories of products and see their features and pricing
+- The ability to add them to your cart
+- Check out form with validation
+
+Limitations (out of scope):
+
+- No backend
+- Login / Auth
 
 ### The challenge
 
@@ -43,11 +55,13 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github](https://github.com/harrisfoes/audio-ecomm)
-- Live Site URL: [here](https://harrisfoes.github.io/audio-ecomm/)
+- Live Site URL: [Audio Ecomm Site](https://harrisfoes.github.io/audio-ecomm/)
 
 ## My process
 
     This is my first "big" project, as such I'll have to subdivide this into phases so that I can have an MVP (minimum viable product) to showcase while the rest of the functionality is still being worked on
+
+    **note: this section is written as sort of a diary while implementing this**
 
     PHASE 1:
         Full home page working
@@ -71,9 +85,7 @@ Users should be able to:
         Data Integration
         1 - Make functioning cart page
         2 - Implement validation for all checkout
-        3 - Implement final thank you page with accurate product display
-
-    Next phases will be turning this into a fullstack app, but that will be for further in the future
+        3 - Implement final thank you page with accurate product display -- Done by January 24 (slowed down during holidays)
 
 ### Built with
 
@@ -87,12 +99,15 @@ Users should be able to:
 ### What I learned
 
 - Learned how to manage assets and reuse components
+- Learned what considerations are needed in structuring the folders
+- Learned how to use useContext api and why its necessary
+- Learned how to use react-router and how SPA websites manages routing
+- Managing version branching in git as I was already showcasing an MVP of the product while implementing the features for each new phase
 
 ### Continued development
 
-Next steps for continued development
-
-- TBD
+Next steps for continued development:
+None for now as I will move on to other projects
 
 ### Useful resources
 

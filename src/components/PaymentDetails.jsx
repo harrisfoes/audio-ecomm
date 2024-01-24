@@ -19,7 +19,6 @@ function PaymentDetails({ formData, setFormData, errors }) {
             <div className="text-error-red">{errors.payment}</div>
           )}
         </div>
-        {/* TODO(harris) work on orange background when clicked once we do funcs */}
         <div className=" md:w-[48%]">
           <div className="mb-6 flex items-center gap-2 rounded-lg hover:border-creamy-900 hover:shadow-md">
             <label
