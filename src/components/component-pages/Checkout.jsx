@@ -13,9 +13,84 @@ function Checkout() {
   const [openConfirmModal, setOpenConfirmModal] = useState(false);
   const [grandTotalPrice, setGrandTotalPrice] = useState(0);
   const { products, updateProducts } = useContext(ProductContext);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    number: "",
+    address: "",
+    zipcode: "",
+    city: "",
+    country: "",
+    payment: "",
+    eMoneyNum: "",
+    eMoneyPin: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (formData.name.trim() === "") {
+      newErrors.name = "Name is required";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Invalid email address";
+    }
+
+    const numberRegex = /^[0-9]+$/;
+    if (!numberRegex.test(formData.number)) {
+      newErrors.number = "Invalid format";
+    }
+
+    if (formData.address.trim() === "") {
+      newErrors.address = "Shipping address required";
+    }
+
+    if (!numberRegex.test(formData.zipcode)) {
+      newErrors.zipcode = "Invalid format";
+    }
+
+    if (formData.city.trim() === "") {
+      newErrors.city = "City required";
+    }
+
+    if (formData.country.trim() === "") {
+      newErrors.country = "Country required";
+    }
+
+    if (formData.payment === "") {
+      newErrors.payment = "Please select one";
+    }
+
+    if (formData.payment === "eMoney") {
+      if (!numberRegex.test(formData.eMoneyNum)) {
+        newErrors.eMoneyNum = "Invalid Format";
+      }
+      if (!numberRegex.test(formData.eMoneyPin)) {
+        newErrors.eMoneyPin = "Invalid Format";
+      }
+    }
+
+    console.log(newErrors);
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleConfirmPay = () => {
+    console.log(errors, "before confirm pay");
+    if (!validateForm()) {
+      console.log(errors);
+      return;
+    }
+
     setOpenConfirmModal(true);
   };
+
   const retrieveTotalPrice = (price) => {
     setGrandTotalPrice(price);
   };
@@ -50,11 +125,23 @@ function Checkout() {
             <div className="rounded-xl bg-neutral-000 px-8 py-8 xl:w-2/3">
               <h1 className="text-3xl font-bold uppercase">Checkout</h1>
 
-              <BillingDetails />
+              <BillingDetails
+                formData={formData}
+                setFormData={setFormData}
+                errors={errors}
+              />
 
-              <ShippingInfo />
+              <ShippingInfo
+                formData={formData}
+                setFormData={setFormData}
+                errors={errors}
+              />
 
-              <PaymentDetails />
+              <PaymentDetails
+                formData={formData}
+                setFormData={setFormData}
+                errors={errors}
+              />
             </div>
 
             <SummaryCard

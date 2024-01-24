@@ -1,6 +1,10 @@
 import React from "react";
 
-function ShippingInfo() {
+function ShippingInfo({ formData, setFormData, errors }) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
   return (
     <>
       <div className="pb-2 pt-6 text-sm font-bold uppercase text-creamy-900">
@@ -8,37 +12,86 @@ function ShippingInfo() {
       </div>
 
       <div className="mb-6">
-        <label className="text-xs font-bold">Your Address</label>
+        <div
+          className={`${
+            errors.address ? "text-error-red" : ""
+          } flex justify-between text-xs font-bold`}
+        >
+          <label className="text-xs font-bold">Your Address</label>
+          {errors.address && <div>{errors.address}</div>}
+        </div>
         <input
           type="text"
-          className="w-full rounded-lg border px-4 py-4 font-bold text-[#9C9C9C] focus:outline-none"
+          className={`${
+            errors.address ? "border-error-red" : "border-neutral-400"
+          } w-full rounded-lg border px-4 py-4 font-bold hover:border-creamy-900 focus:border-creamy-900 focus:shadow-lg focus:outline-none`}
           placeholder="1137 Williams Avenue"
+          name="address"
+          value={formData.address}
+          onChange={handleChange}
         />
       </div>
 
-      <div className="md:flex md:flex-wrap md:justify-between md:gap-4">
+      <div className="md:flex md:flex-wrap md:items-center md:justify-between md:gap-4">
         <div className="mb-6 md:mb-0 md:w-[48%]">
-          <label className="text-xs font-bold">ZIP Code</label>
+          <div
+            className={`${
+              errors.zipcode ? "text-error-red" : ""
+            } flex justify-between text-xs font-bold`}
+          >
+            <label className="text-xs font-bold">ZIP Code</label>
+            {errors.zipcode && <div>{errors.zipcode}</div>}
+          </div>
+
           <input
-            type="text"
-            className="w-full rounded-lg border px-4 py-4 font-bold text-[#9C9C9C] focus:outline-none"
+            type="number"
+            className={`${
+              errors.zipcode ? "border-error-red" : "border-neutral-400"
+            } w-full rounded-lg border px-4 py-4 font-bold hover:border-creamy-900 focus:border-creamy-900 focus:shadow-lg focus:outline-none`}
             placeholder="10001"
+            name="zipcode"
+            value={formData.zipcode}
+            onChange={handleChange}
           />
         </div>
         <div className="mb-6 md:mb-0 md:w-[48%]">
-          <label className="text-xs font-bold">City</label>
+          <div
+            className={`${
+              errors.city ? "text-error-red" : ""
+            } flex justify-between text-xs font-bold`}
+          >
+            <label className="text-xs font-bold">City</label>
+            {errors.city && <div>{errors.city}</div>}
+          </div>
           <input
             type="text"
-            className="w-full rounded-lg border px-4 py-4 font-bold text-[#9C9C9C] focus:outline-none"
+            className={`${
+              errors.city ? "border-error-red" : "border-neutral-400"
+            } w-full rounded-lg border px-4 py-4 font-bold hover:border-creamy-900 focus:border-creamy-900 focus:shadow-lg focus:outline-none`}
             placeholder="New York"
+            name="city"
+            value={formData.city}
+            onChange={handleChange}
           />
         </div>
         <div className="mb-6 md:w-[48%]">
-          <label className="text-xs font-bold">Country</label>
+          <div
+            className={`${
+              errors.country ? "text-error-red" : ""
+            } flex justify-between text-xs font-bold`}
+          >
+            <label className="text-xs font-bold">Country</label>
+            {errors.country && <div>{errors.country}</div>}
+          </div>
           <input
             type="text"
-            className="w-full rounded-lg border px-4 py-4 font-bold text-[#9C9C9C] focus:outline-none"
+            className={`${
+              errors.country ? "border-error-red" : "border-neutral-400"
+            } w-full rounded-lg border px-4 py-4 font-bold hover:border-creamy-900 focus:border-creamy-900 focus:shadow-lg focus:outline-none`}
             placeholder="United States"
+            name="country"
+            value={formData.country}
+            onChange={handleChange}
           />
         </div>
       </div>

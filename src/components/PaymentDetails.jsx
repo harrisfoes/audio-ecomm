@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import cod from "../assets/checkout/icon-cash-on-delivery.svg";
 
-function PaymentDetails() {
-  const [isCod, setIsCod] = useState(false);
+function PaymentDetails({ formData, setFormData, errors }) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
   return (
     <>
       <div className="pb-2 pt-6 text-sm font-bold uppercase text-creamy-900">
@@ -10,36 +13,51 @@ function PaymentDetails() {
       </div>
 
       <div className="md:flex md:flex-wrap md:justify-between  md:gap-4">
-        <p className="text-xs font-bold md:w-[48%]">Payment Method</p>
+        <div className="flex justify-between text-xs font-bold md:w-[48%]">
+          <div>Payment Method</div>
+          {errors.payment && (
+            <div className="text-error-red">{errors.payment}</div>
+          )}
+        </div>
         {/* TODO(harris) work on orange background when clicked once we do funcs */}
         <div className=" md:w-[48%]">
-          <div className="mb-6 flex items-center gap-2 rounded-lg border border-[#9C9C9C] px-3 py-4 hover:border-creamy-900 hover:shadow-md">
+          <div className="mb-6 flex items-center gap-2 rounded-lg hover:border-creamy-900 hover:shadow-md">
             <label
-              htmlFor="payment-1"
-              className="block h-full w-full font-bold"
+              htmlFor="e-money"
+              className={`${
+                formData.payment === "eMoney"
+                  ? "border-creamy-900"
+                  : "border-neutral-400"
+              }  block h-full w-full rounded-lg border px-3 py-4 font-bold`}
             >
               <input
-                onClick={() => setIsCod(false)}
-                id="payment-1"
+                onChange={handleChange}
+                id="e-money"
                 type="radio"
-                name="payment-method"
-                value="1"
+                name="payment"
+                value="eMoney"
+                checked={formData.payment === "eMoney"}
                 className="mx-2 h-4 w-4 border bg-creamy-900 accent-creamy-900 focus:ring-creamy-900"
               />
               e-Money
             </label>
           </div>
-          <div className="mb-6 flex items-center gap-2 rounded-lg border border-[#9C9C9C] px-3 py-4 hover:border-creamy-900 hover:shadow-md ">
+          <div className="mb-6 flex items-center gap-2 rounded-lg  hover:border-creamy-900 hover:shadow-md ">
             <label
-              htmlFor="payment-2"
-              className="block h-full w-full font-bold"
+              htmlFor="cod"
+              className={`${
+                formData.payment === "cod"
+                  ? "border-creamy-900"
+                  : "border-neutral-400"
+              }  block h-full w-full rounded-lg border px-3 py-4 font-bold`}
             >
               <input
-                onClick={() => setIsCod(true)}
-                id="payment-2"
+                onChange={handleChange}
+                id="cod"
                 type="radio"
-                name="payment-method"
-                value="2"
+                name="payment"
+                value="cod"
+                checked={formData.payment === "cod"}
                 className="mx-2 h-4 w-4 accent-creamy-900 focus:ring-creamy-900"
               />
               Cash on Delivery
@@ -48,7 +66,7 @@ function PaymentDetails() {
         </div>
       </div>
 
-      {isCod ? (
+      {formData.payment === "cod" ? (
         <div className="flex gap-6 p-4">
           <img src={cod} />
           <p className="opacity-50">
@@ -60,19 +78,43 @@ function PaymentDetails() {
       ) : (
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:w-[48%]">
-            <label className="text-xs font-bold">e-Money Number</label>
+            <div
+              className={`${
+                errors.eMoneyNum ? "text-error-red" : ""
+              } flex justify-between text-xs`}
+            >
+              <label className="text-xs font-bold">e-Money Number</label>
+              {errors.eMoneyNum && <div>{errors.eMoneyNum}</div>}
+            </div>
             <input
               type="number"
-              className="w-full rounded-lg border px-4 py-4 font-bold text-[#9C9C9C] focus:outline-none"
+              name="eMoneyNum"
+              className={`${
+                errors.eMoneyNum ? "border-error-red" : "border-neutral-400"
+              } w-full rounded-lg border px-4 py-4 font-bold  focus:outline-none`}
               placeholder="238521993"
+              value={formData.eMoneyNum}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-6 md:w-[48%]">
-            <label className="text-xs font-bold">e-Money PIN</label>
+            <div
+              className={`${
+                errors.eMoneyPin ? "text-error-red" : ""
+              } flex justify-between text-xs`}
+            >
+              <label className="text-xs font-bold">e-Money Pin</label>
+              {errors.eMoneyPin && <div>{errors.eMoneyPin}</div>}
+            </div>
             <input
               type="number"
-              className="w-full rounded-lg border px-4 py-4 font-bold text-[#9C9C9C] focus:outline-none"
+              name="eMoneyPin"
+              className={`${
+                errors.eMoneyPin ? "border-error-red" : "border-neutral-400"
+              } w-full rounded-lg border px-4 py-4 font-bold  focus:outline-none`}
               placeholder="6891"
+              value={formData.eMoneyPin}
+              onChange={handleChange}
             />
           </div>
         </div>
